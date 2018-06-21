@@ -17,7 +17,6 @@ public class Dijkstra {
     public void DijkstraPath(Node source, int en) {
         Node n = source;
         n.pathCost = 0;
-        int c = 0;
         while (visited.size() != en) {
             for (Object key : n.adjacentNodes.keySet()) {
                 Node currentNode = (Node) key;
@@ -43,7 +42,6 @@ public class Dijkstra {
                     n = p;
                 }
             }
-            c++;
         }
 
         System.out.println("Shortest path distance from source: " + source.name + " to distination: F");
