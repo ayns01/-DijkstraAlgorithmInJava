@@ -15,7 +15,6 @@ public class ApplicationDriver
         Node G = new Node("G");
         Node H = new Node("H");
 
-        // Adjacent Nodes
         A.addAdjacentNodes(B, 20);
         A.addAdjacentNodes(G, 90);
         A.addAdjacentNodes(D, 80);

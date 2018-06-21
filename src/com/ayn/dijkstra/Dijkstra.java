@@ -7,18 +7,18 @@ public class Dijkstra {
     ArrayList<Node> visited = new ArrayList<Node>();
 
     public Dijkstra(Node[] paths, Node start) {
+        int en = paths.length;
         for (Node path : paths) {
             this.paths.add(path);
         }
-        DijkstraPath(start);
+        DijkstraPath(start, en);
     }
 
-    public void DijkstraPath(Node source) {
-        source.pathCost = 0;
-
+    public void DijkstraPath(Node source, int en) {
         Node n = source;
-        int count = 0;
-        while (count != 7) {
+        n.pathCost = 0;
+        int c = 0;
+        while (visited.size() != en) {
             for (Object key : n.adjacentNodes.keySet()) {
                 Node currentNode = (Node) key;
                 if (visited.contains(currentNode)) {
@@ -43,7 +43,7 @@ public class Dijkstra {
                     n = p;
                 }
             }
-            count++;
+            c++;
         }
 
         System.out.println("Shortest path distance from source: " + source.name + " to distination: F");
